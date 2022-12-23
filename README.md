@@ -1,6 +1,6 @@
 # Rails Url Short
 
-* To Run this project:
+### To Run this project:
 - Install ruby 3.1.2 using rvm or what you prefer.
 - Having installed postgres
 
@@ -8,10 +8,11 @@
 - RUn the command `bundle install` in order to install all dependencies
 - Run the command `rails s` in order to start the server
 
-*** Requests
-- Create the short url:
-```json
+### Requests
+ Create the short url:
+```
 POST http://localhost:3000/short_urls
+
 body:
 {
    "short_url": {
@@ -21,7 +22,7 @@ body:
 ```
 
 Response:
-```json
+```
 {
     "id": 4,
     "original_url": "http://facebook.com",
@@ -34,7 +35,7 @@ Response:
 ```
 
 GET short URL:
-```json
+```
 GET http://localhost:3000/e
 
 Response:
