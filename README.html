@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rails Url Short</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="rails-url-short">Rails Url Short</h1>
+<ul>
+<li>To Run this project:</li>
+</ul>
+<ul>
+<li>
+<p>Install ruby 3.1.2 using rvm or what you prefer.</p>
+</li>
+<li>
+<p>Having installed postgres</p>
+</li>
+<li>
+<p>Run the command <code>rails db:create db:migrate</code> in order to have the database setup</p>
+</li>
+<li>
+<p>Run the command <code>rails s</code> in order to start the server</p>
+</li>
+</ul>
+<p>*** Requests</p>
+<ul>
+<li>Create the short url:</li>
+</ul>
+<pre><code class="language-json">POST http<span class="hljs-punctuation">:</span><span class="hljs-comment">//localhost:3000/short_urls</span>
+
+body<span class="hljs-punctuation">:</span>
+<span class="hljs-punctuation">{</span>
+   <span class="hljs-attr">&quot;short_url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+       <span class="hljs-attr">&quot;original_url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;http://facebook.com&quot;</span>
+   <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;original_url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;http://facebook.com&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;shorted_url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;e&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Facebook – entre ou cadastre-se&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;redirects&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;created_at&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2022-12-23T14:36:59.979Z&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;updated_at&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2022-12-23T14:37:00.005Z&quot;</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+
+        
+        
+    </body>
+    </html>

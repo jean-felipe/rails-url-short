@@ -1,24 +1,53 @@
-# README
+# Rails Url Short
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* To Run this project:
+- Install ruby 3.1.2 using rvm or what you prefer.
+- Having installed postgres
 
-Things you may want to cover:
+- Run the command `rails db:create db:migrate` in order to have the database setup
+- RUn the command `bundle install` in order to install all dependencies
+- Run the command `rails s` in order to start the server
 
-* Ruby version
+*** Requests
+- Create the short url:
+```json
+POST http://localhost:3000/short_urls
+body:
+{
+   "short_url": {
+       "original_url": "http://facebook.com"
+   }
+}
+```
 
-* System dependencies
+Response:
+```json
+{
+    "id": 4,
+    "original_url": "http://facebook.com",
+    "shorted_url": "e",
+    "title": "Facebook – entre ou cadastre-se",
+    "redirects": 0,
+    "created_at": "2022-12-23T14:36:59.979Z",
+    "updated_at": "2022-12-23T14:37:00.005Z"
+}
+```
 
-* Configuration
+GET short URL:
+```json
+GET http://localhost:3000/e
 
-* Database creation
+Response:
+{
+    "redirects": 1,
+    "id": 4,
+    "original_url": "http://facebook.com",
+    "shorted_url": "e",
+    "title": "Facebook – entre ou cadastre-se",
+    "created_at": "2022-12-23T14:36:59.979Z",
+    "updated_at": "2022-12-23T14:41:07.865Z"
+}
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Additional
+In order to execute the unit tests run: `rspec`
